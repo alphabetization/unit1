@@ -6,26 +6,26 @@ result is unexpected, note that in the third column.
 Section 1
     Input                   Output                          Did it do something unexpected?
 a   5 + 2 * 2               9                                  n
-b   2/3
-c   2.0 * 1.5
-d   (2 + 3) * 10
-e   5.0 // 2
-f   5.0 % 2
+b   2/3                     0.6                                 n
+c   2.0 * 1.5               3.0                                n
+d   (2 + 3) * 10            50                                  n
+e   5.0 // 2                2.0                                n
+f   5.0 % 2                 1.0                                 n
 
 Section 2
     Input                   Output                          Did it do something unexpected?
-a   a
-b   'a'
+a   a                       error                           y
+b   'a'                     'a'                              y
 
 Section 3
     Input                   Output                          Did it do something unexpected?
-a   'a + b'
-b   'a' + 'b'
+a   'a + b'                 'a + b'                             n
+b   'a' + 'b'               'ab'                               n
 
 Section 4
     Input                   Output                          Did it do something unexpected?
-a   'a' * 'b'
-b   'a' * 2
+a   'a' * 'b'               error                               y
+b   'a' * 2                 aa                                 y
 
 Part 2
 Before going to the IDE
@@ -35,14 +35,14 @@ column.
 
     Expression                  String/Integer/Float        Prediction of Result                Interpreter Result
 a   10 * 2                      integer                     20                                  20
-b   .5 * 2
-c   10/2
-d   10%2
-e   2 ** 3
-f   (2+5)*3
-g   2 + 5 * 3
-h   'ab' + '12' + '3'
-i   x
+b   .5 * 2                      float                       1
+c   10/2                        integer                     5
+d   10%2                        float                       5?
+e   2 ** 3                      integer                     6 or 12
+f   (2+5)*3                     integer                     21
+g   2 + 5 * 3                   integer                     17
+h   'ab' + '12' + '3'           string                      'ab123'
+i   x                           string
 j   "ab" + "cd"
 k   'abc' * 2
 l   '1'*2 + '2' * 3
